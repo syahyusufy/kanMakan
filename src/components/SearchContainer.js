@@ -13,21 +13,20 @@ class SearchContainer extends Component{
 			cities:[]
 		}
 
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit = this.getRestaurant.bind(this);
 		this.getCity = this.getCity.bind(this);
 	}
 
 	componentDidMount(){
-        this.setState(() => ({ keyword : this.props.match.params.keyword }));
-        this.handleSubmit();
+		this.setState(() => ({ keyword : this.props.match.params.keyword }));
+		console.log(this.props.match.params.keyword);
+        this.getRestaurant();
 	}
 	
-	componentDidUpdate(prevProps, prevState) {
-		console.log(prevProps.match.params.keyword);
-		console.log(prevState.keyword);
-		// if (prevState.name !== this.state.name) {
-		//   this.handleUpdateName();
-		// }
+	componentDidUpdate(prevProps) {
+		if (prevProps.match.params.keyword !== this.props.match.params.keyword) {
+		  this.getRestaurant();
+		}
 	  }
 
 	getCity(){
@@ -41,7 +40,7 @@ class SearchContainer extends Component{
 		})
 	}
 
-	handleSubmit() {
+	getRestaurant() {
 
 		this.setState(() => ({ 
 	      items: []   
@@ -75,7 +74,7 @@ class SearchContainer extends Component{
 
 	 return(
         <div className="mt-5 mb-5">
-            <MDBContainer>
+            <MDBContainer key="search">
                 {search}
             </MDBContainer>
      </div>

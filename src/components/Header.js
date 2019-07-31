@@ -1,5 +1,6 @@
 import React from "react";
 import SearchContainer from "./SearchContainer";
+import Home from "./Home";
 
 import {  MDBBtn, 
           MDBCol, 
@@ -34,6 +35,7 @@ export class Header extends React.Component {
   render() {
     return (
       <Router>
+        <MDBContainer>
         <MDBNavbar color="blue" className="text-white darken-1" dark expand="md">
           <MDBContainer>
             <MDBNavbarBrand className="ml-5">kanMakan</MDBNavbarBrand>
@@ -62,7 +64,9 @@ export class Header extends React.Component {
                       </MDBFormInline>
                     </MDBCol>
                     <MDBCol sm="1 pr-5">
-                      <MDBBtn color="solid-blue" className="btn-md">Login</MDBBtn>
+                      <Link to={`/home`}>
+                        <MDBBtn color="solid-blue" className="btn-md">Login</MDBBtn>
+                      </Link>
                     </MDBCol>
                     <MDBCol sm="1 pl-5">
                       <MDBBtn className="text-nowrap btn-md" outline color="white" href="#">Create an account</MDBBtn>
@@ -75,7 +79,8 @@ export class Header extends React.Component {
         </MDBNavbar>
       
         <Route path="/search/:keyword" component={SearchContainer} />
-      
+        <Route path="/home" component={Home} />
+        </MDBContainer>
       </Router>
     );
   }
