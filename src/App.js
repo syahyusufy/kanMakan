@@ -30,7 +30,6 @@ class App extends React.Component {
       return (
          <div className="background">
             <Header/>
-            <Content/>
          </div>
       );
    }
