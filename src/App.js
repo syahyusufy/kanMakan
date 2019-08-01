@@ -22,15 +22,15 @@ import {  MDBBtn,
 // import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import logo from "./logo.png";
-import { Header } from "./components/Header";
-import { Content } from "./components/Content";
+import { LandHeader, LandContent, LandFooter } from "./components/Landingpage";
 
 class App extends React.Component {
    render() {
       return (
          <div className="background">
-            <Header/>
-            <Content/>
+            <LandHeader/>
+            <LandContent/>
+            <LandFooter/>
          </div>
       );
    }
