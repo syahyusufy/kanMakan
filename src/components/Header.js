@@ -19,7 +19,8 @@ export class Header extends React.Component {
     return (
       <MDBNavbar color="blue" className="text-white darken-1" dark expand="md">
         <MDBContainer>
-        <MDBNavbarBrand className="ml-5">kanMakan</MDBNavbarBrand>
+        <MDBFormInline className="container">
+        <MDBNavbarBrand className="ml-5 font-weight-bold">kanMakan</MDBNavbarBrand>
         <MDBNavbarToggler/>
         <Router>
           <MDBCollapse navbar>
@@ -37,10 +38,10 @@ export class Header extends React.Component {
                     </div>
                   </MDBCol>
                   <MDBCol md="7 pl-0 pt-2">
-                    <MDBFormInline className="container">
+                    
                       <MDBIcon className="text-white" icon="search" />
                       <input className="form-control form-control-md ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-                    </MDBFormInline>
+                    
                   </MDBCol>
                   <MDBCol sm="1 pr-5">
                     <MDBBtn color="solid-blue" className="btn-md">Login</MDBBtn>
@@ -53,6 +54,7 @@ export class Header extends React.Component {
             </MDBNavbarNav>
           </MDBCollapse>
         </Router>
+        </MDBFormInline>
         </MDBContainer>
       </MDBNavbar>
     );
