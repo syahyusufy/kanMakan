@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Content from './Content';
 import axios from 'axios'
 import { MDBContainer } from "mdbreact";
+<<<<<<< HEAD
 import {  MDBBtn, 
           MDBCol, 
           MDBRow, 
@@ -11,6 +12,8 @@ import {  MDBBtn,
           MDBCardFooter
         } from "mdbreact";
 import "../index.css";
+=======
+>>>>>>> refs/remotes/origin/master
 
 class SearchContainer extends Component{
 	constructor(){
@@ -34,8 +37,12 @@ class SearchContainer extends Component{
 	
 	componentDidUpdate(prevProps) {
 		if (prevProps.match.params.keyword !== this.props.match.params.keyword) {
+<<<<<<< HEAD
 			this.setState(() => ({ keyword : this.props.match.params.keyword }));
 			this.getRestaurant();
+=======
+		  this.getRestaurant();
+>>>>>>> refs/remotes/origin/master
 		}
 	  }
 
@@ -58,7 +65,11 @@ class SearchContainer extends Component{
 
 	    console.log(this.state.keyword);
 
+<<<<<<< HEAD
 	      axios.post("http://192.168.1.9:8000/api/search",{
+=======
+	      axios.post("http://127.0.0.1:8000/api/search",{
+>>>>>>> refs/remotes/origin/master
 	          keyword : this.props.match.params.keyword,
 	          city : this.state.city
 	      })
@@ -83,6 +94,7 @@ class SearchContainer extends Component{
 
 
 	 return(
+<<<<<<< HEAD
         <div className="font mt-5 mb-5">
             <MDBContainer key="search">
             <MDBRow className="mt-3 pt-3">
@@ -101,6 +113,11 @@ class SearchContainer extends Component{
 					<p>pppppppppppppppp</p>
             	</MDBCol>
              </MDBRow>
+=======
+        <div className="mt-5 mb-5">
+            <MDBContainer key="search">
+                {search}
+>>>>>>> refs/remotes/origin/master
             </MDBContainer>
      </div>
 	 );

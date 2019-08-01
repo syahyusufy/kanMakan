@@ -11,12 +11,20 @@ import {  MDBBtn,
 export default class Content extends React.Component {
   render () {
     return (
+<<<<<<< HEAD
+=======
+     
+>>>>>>> refs/remotes/origin/master
          <MDBRow className="pb-3">
            <MDBCard className="card">
              <MDBCardBody>
                <MDBRow className="line">
                  <MDBCol size="4">
+<<<<<<< HEAD
                     <img className="img-square-wrapper" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={125} height={100}/>
+=======
+                       <img className="img-square-wrapper" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={125} height={100}/>
+>>>>>>> refs/remotes/origin/master
                  </MDBCol> 
                  <MDBCol size="7" className="font-small">
                    <div><a className="grey-text">Cafe</a></div>
@@ -43,6 +51,7 @@ export default class Content extends React.Component {
              </MDBCardBody>
              <MDBCardFooter color="danger-color-dark">
                <MDBRow>
+<<<<<<< HEAD
                <MDBCol size="6" className="text-center">
                   <MDBIcon icon="phone"/>
                   <span> Call </span>
@@ -50,6 +59,19 @@ export default class Content extends React.Component {
                <MDBCol size="5" className="text-center">
                   <MDBIcon icon="bars"/>
                   <span> View Menu </span> 
+=======
+               <MDBCol md="6" className="text-center">
+                 <MDBBtn flat>
+                   <MDBIcon icon="phone"/>
+                    Call 
+                 </MDBBtn>
+               </MDBCol>
+               <MDBCol md="5" className="text-center">
+                 <MDBBtn flat>
+                   <MDBIcon icon="bars"/>
+                    View Menu 
+                 </MDBBtn>
+>>>>>>> refs/remotes/origin/master
                </MDBCol>
                </MDBRow>
              </MDBCardFooter>

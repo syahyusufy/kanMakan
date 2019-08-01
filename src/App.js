@@ -28,9 +28,13 @@ class App extends React.Component {
    render() {
       return (
          <div className="background">
+<<<<<<< HEAD
             <LandHeader/>
             <LandContent/>
             <LandFooter/>
+=======
+            <Header/>
+>>>>>>> refs/remotes/origin/master
          </div>
       );
    }
