@@ -23,18 +23,15 @@ import {  MDBBtn,
 import "./index.css";
 import logo from "./logo.png";
 import { LandHeader, LandContent, LandFooter } from "./components/Landingpage";
+import { Header } from "./components/Header"
 
 class App extends React.Component {
    render() {
       return (
          <div className="background">
-<<<<<<< HEAD
             <LandHeader/>
             <LandContent/>
             <LandFooter/>
-=======
-            <Header/>
->>>>>>> refs/remotes/origin/master
          </div>
       );
    }
