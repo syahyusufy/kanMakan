@@ -15,13 +15,13 @@ import {  MDBBtn,
           MDBInput
         } from "mdbreact";
 import "../index.css";
+import { connect } from 'react-redux';
 
 class SearchContainer extends Component{
 	constructor(){
 		super()
 		this.state={
 			keyword:'',
-			city:1,
 			items:[],
 			cities:[]
 		}
@@ -37,7 +37,7 @@ class SearchContainer extends Component{
 	}
 	
 	componentDidUpdate(prevProps) {
-		if (prevProps.match.params.keyword !== this.props.match.params.keyword) {
+		if (prevProps.match.params.keyword !== this.props.match.params.keyword || prevProps.city !== this.props.city) {
 			this.setState(() => ({ keyword : this.props.match.params.keyword }));
 			this.getRestaurant();
 		}
@@ -62,9 +62,9 @@ class SearchContainer extends Component{
 
 	    console.log(this.state.keyword);
 
-	      axios.post("http://192.168.1.16:8000/api/search",{
+	      axios.post("http://localhost:8000/api/search",{
 	          keyword : this.props.match.params.keyword,
-	          city : this.state.city
+	          city : this.props.city
 	      })
 	     .then( (response) => {
 	        this.setState(() => ({ items : response.data }));
@@ -261,4 +261,10 @@ class SearchContainer extends Component{
 	}
 }
 
-export default SearchContainer;
+const mapStateToProps = (state, ownProps) => {
+    return {
+      city: state.cityChange
+    }
+};
+  
+export default connect(mapStateToProps)(SearchContainer);

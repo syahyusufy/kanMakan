@@ -4,27 +4,33 @@ import Home from "./Home";
 
 import {  MDBBtn, 
           MDBCol, 
-          MDBContainer, 
           MDBRow, 
           MDBIcon, 
           MDBFormInline,
           MDBNavbar,
-          MDBNavbarBrand,
-          MDBNavbarToggler,
-          MDBCollapse,
-          MDBNavbarNav
+          MDBNavbarBrand
         } from "mdbreact";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { connect } from 'react-redux';
+import * as cityAction from '../actions/cityAction';
 
-export class Header extends React.Component {
+class Header extends React.Component {
   constructor(){
 		super()
 		this.state={
 			keyword:''
 		}
-		this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
   }
   
+  handleCityChange(e){
+    this.setState({city: e.target.value});
+    this.props.setCity(e.target.value);
+    console.log(e.target.value);
+    e.preventDefault();
+  }
+
   handleKeywordChange(e){
     this.setState({keyword: e.target.value});
     console.log(this.state.keyword);
@@ -43,8 +49,7 @@ export class Header extends React.Component {
                 </MDBCol>
                 <MDBCol size="2 pl-5 pr-5">
                   <div>
-                    <select className="browser-default custom-select form-control-sm">
-                      <option>Choose City</option>
+                    <select value={this.props.city} className="browser-default custom-select form-control-sm" onChange={this.handleCityChange}>
                       <option value="1">Bandung</option>
                       <option value="2">Jakarta</option>
                     </select>
@@ -73,3 +78,18 @@ export class Header extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    city: state.cityChange
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCity: city => dispatch(cityAction.setCity(city))
+  }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

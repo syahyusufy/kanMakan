@@ -19,56 +19,8 @@ import {  MDBBtn,
           MDBNavbarNav
         } from "mdbreact";
 
-// import { BrowserRouter as Router } from "react-router-dom";
 import "../index.css";
-
-export class LandHeader extends React.Component {
-   render() {
-      return (
-         <div>
-            <div className="bg">
-              <MDBContainer className="text-center">
-                <MDBRow>
-                  <MDBCol align="right" className="mt-4">
-                      <a href="#" className="pr-3 font-weight-bold text-light" >Masuk</a> 
-                      <MDBBtn outline color="white" href="#">Daftar</MDBBtn>
-                  </MDBCol>
-                </MDBRow>
-                <MDBRow>
-                  <MDBCol className="container mt-5">
-                     <img src={"https://cdn.auth0.com/blog/react-js/react.png"} alt="Logo" width={200} height={200}/>
-                  </MDBCol>
-                </MDBRow>
-                <MDBRow>
-                  <MDBCol className="mt-3"> 
-                    <h3 className="font-weight-bold text-light">Find the best restaurants, cafés, and bars in Bandung</h3> 
-                  </MDBCol>
-                </MDBRow>
-                <MDBRow className="p-5">
-                  <MDBCol md="2"/>
-                  <MDBCol md="2"className="pr-4 pb-3">
-                    <div>
-                      <select className="browser-default custom-select form-control-sm">
-                        <option>Choose City</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                      </select>
-                    </div>
-                  </MDBCol>
-                  <MDBCol md="7">
-                    <MDBFormInline className="container">
-                      <MDBIcon className="text-white" icon="search" />
-                      <input className="form-control form-control-md ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-                    </MDBFormInline>
-                  </MDBCol>
-                </MDBRow>
-              </MDBContainer>
-            </div>
-         </div>
-      );
-   }
-}
+import { connect } from 'react-redux';
 
 export class LandContent extends React.Component {
    render() {
@@ -290,3 +242,4 @@ export class LandFooter extends React.Component {
     )
   }
 }
+
