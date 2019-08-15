@@ -2,17 +2,12 @@ import React,{Component} from 'react';
 import Content from './Content';
 import axios from 'axios'
 import { MDBContainer } from "mdbreact";
-import {  MDBBtn, 
-          MDBCol, 
-          MDBRow, 
-          MDBIcon, 
+import {  MDBCol, 
+          MDBRow,  
           MDBCard,
-          MDBCardTitle,
           MDBCardBody,
-          MDBCardFooter,
           MDBCardImage,
-          MDBCardText,
-          MDBInput
+          MDBCardText
         } from "mdbreact";
 import "../index.css";
 import { connect } from 'react-redux';
@@ -37,6 +32,8 @@ class SearchContainer extends Component{
 	}
 	
 	componentDidUpdate(prevProps) {
+		console.log(prevProps.match.params.keyword);
+		console.log(this.props.match.params.keyword);
 		if (prevProps.match.params.keyword !== this.props.match.params.keyword || prevProps.city !== this.props.city) {
 			this.setState(() => ({ keyword : this.props.match.params.keyword }));
 			this.getRestaurant();
@@ -64,7 +61,7 @@ class SearchContainer extends Component{
 
 	      axios.post("http://localhost:8000/api/search",{
 	          keyword : this.props.match.params.keyword,
-	          city : this.props.city
+	          cty : this.props.city
 	      })
 	     .then( (response) => {
 	        this.setState(() => ({ items : response.data }));

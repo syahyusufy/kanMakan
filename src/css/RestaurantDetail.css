@@ -1,0 +1,15 @@
+.cover {
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
+.bw1 {
+  border-width: 1px;
+}
+
+.bg-green {
+  background: #5BA829;
+  border-color: #5BA829 !important;
+}

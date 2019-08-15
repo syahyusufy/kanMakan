@@ -10,29 +10,47 @@ import {  MDBBtn,
 import "../index.css";
 import { connect } from 'react-redux';
 import * as cityAction from '../actions/cityAction';
+import { Link} from "react-router-dom";
 
 class LandHeader extends React.Component {
   constructor(){
 		super()
 		this.state={
-      keyword:''
+      keyword:'',
+      render : false
 		}
     this.handleKeywordChange = this.handleKeywordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
   }
   
+  componentDidMount(){
+    this.setState({render : true}) 
+    console.log(this.props.userLogin);
+    console.log(this.props.city);
+  }
+
+  componentDidUpdate(prevProps){
+    console.log(this.props.userLogin.loggedIn);
+
+    if(this.props.userLogin.loggedIn !== prevProps.userLogin.loggedIn ){
+      this.setState({render : true})
+    }
+  }
+
+
   handleSubmit(){
-    console.log("submit");
     console.log(this.props.history);
     this.props.history.push("/search/"+this.state.keyword);
   }
 
-    handleCityChange(e){
+  handleCityChange(e){
+    console.log(this.props.userLogin);
+    localStorage.removeItem("userData")
     this.setState({city: e.target.value});
     this.props.setCity(e.target.value);
     e.preventDefault();
-    }
+   }
 
   handleKeywordChange(e){
     this.setState({keyword: e.target.value});
@@ -41,15 +59,22 @@ class LandHeader extends React.Component {
   }
 
    render() {
+      
       return (
          <div>
             <div className="bg">
               <MDBContainer className="text-center">
                 <MDBRow>
+                { this.props.userLogin.loggedIn ?
                   <MDBCol align="right" className="mt-4">
-                      <a href="#" className="pr-3 font-weight-bold text-light" >Masuk</a> 
-                      <MDBBtn outline color="white" href="#">Daftar</MDBBtn>
-                  </MDBCol>
+                   <MDBBtn outline color="white" href="#">{this.props.userLogin.user.username}</MDBBtn> 
+                  </MDBCol> 
+                  : 
+                  <MDBCol align="right" className="mt-4">
+                    <Link className="pr-3 font-weight-bold text-light" to="/signin">Masuk</Link>
+                    <MDBBtn outline color="white" href="#">Daftar</MDBBtn>
+                  </MDBCol> 
+                }
                 </MDBRow>
                 <MDBRow>
                   <MDBCol className="container mt-5">
@@ -87,9 +112,11 @@ class LandHeader extends React.Component {
    }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+  
     return {
-      city: state.cityChange
+      city: state.cityChange, 
+      userLogin : state.authentication
     }
 };
 

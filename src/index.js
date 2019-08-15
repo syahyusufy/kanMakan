@@ -11,6 +11,7 @@ import { LandFooter } from "./components/Landingpage";
 import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
+import AuthUser from './pages/AuthUser';
 
 const store = configureStore();
 
@@ -20,6 +21,8 @@ ReactDOM.render(
         <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/search/:keyword" component={Header} />
+            <Route path="/signin" component={AuthUser} />
+            <Route path="/signup" component={AuthUser} />
         </Switch>
     </BrowserRouter>
     <LandFooter />

@@ -1,26 +1,18 @@
-import React, { Component } from "react";
-import {  MDBBtn, 
+import React from "react";
+import {   
           MDBCol, 
           MDBContainer, 
           MDBRow, 
-          MDBIcon, 
           MDBCard,
-          MDBCardTitle,
           MDBCardBody,
-          MDBCardImage,
+          
           MDBCardText,
-          MDBCardFooter,
+          
           MDBFooter,
-          MDBFormInline,
-          MDBNavbar,
-          MDBNavbarBrand,
-          MDBNavbarToggler,
-          MDBCollapse,
-          MDBNavbarNav
+          
         } from "mdbreact";
 
 import "../index.css";
-import { connect } from 'react-redux';
 
 export class LandContent extends React.Component {
    render() {
@@ -36,7 +28,7 @@ export class LandContent extends React.Component {
                 <MDBCard>
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
-                        <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
+                        <img classNames="" src={"http://via.placeholder.com/300x180"} width={145} height={120}/>
                     </div>
                     <div className="card-body">
                         <h5 className ="card-title font-weight-bold">Card title</h5>

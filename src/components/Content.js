@@ -21,9 +21,9 @@ export default class Content extends React.Component {
              <MDBCol size="7">
                <div className="font-card">
                  <div><a className="grey-text">Cafe</a></div>
-                 <div className="font-weight-bold font-card-title">{this.props.search.name}</div>
+                 <div className="font-weight-bold font-card-title">{this.props.search.restaurantName}</div>
                  <div><b>Bogor Selatan</b></div>
-                 <div className="grey-text"> {this.props.search.address}</div>
+                 <div className="grey-text"> {this.props.search.restaurantAddress}</div>
                 </div>
              </MDBCol>
              <MDBCol>
@@ -38,7 +38,7 @@ export default class Content extends React.Component {
              </MDBCol>
              <MDBCol colSpan="2">
                <div>Jawa</div>
-               <div>Rp.{this.props.search.average_cost}</div>
+               <div>Rp.{this.props.search.restaurantAverageCost}</div>
                <div>9h 30m – 21h (Mon-Fri),9h 30m – 22h (Sat-Sun)</div>
              </MDBCol>
            </MDBRow>

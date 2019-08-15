@@ -22,6 +22,11 @@ class Header extends React.Component {
 		}
     this.handleKeywordChange = this.handleKeywordChange.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleLogin(){
+    this.props.history.push("/signin");
   }
   
   handleCityChange(e){
@@ -63,7 +68,7 @@ class Header extends React.Component {
                   </Link>
                 </MDBCol>
                 <MDBCol size="1 pl-4 pr-0">
-                  <Link to={`/home`} className="text-white font-weight-bold">Log in</Link>
+                  <a onClick={this.handleLogin} className="text-white font-weight-bold">Log in</a>
                 </MDBCol>
                 <MDBCol size="1 pl-0">
                   <MDBBtn className="btn-md" outline color="white" href="#">Create</MDBBtn>
@@ -72,16 +77,19 @@ class Header extends React.Component {
             </MDBRow>
           </div>
         </MDBNavbar>
+      
           <Route path="/search/:keyword" component={SearchContainer} />
           <Route path="/home" component={Home} />
       </Router>
+      
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    city: state.cityChange
+    city: state.cityChange,
+    userLogin: state.authentication
   }
 };
 

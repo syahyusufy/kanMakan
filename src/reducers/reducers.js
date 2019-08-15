@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { authentication } from './authReducers';
 import {
   SET_CITY,
 } from '../actions/actionTypes';
@@ -15,7 +16,7 @@ function cityChange(state = city, action) {
 }
 
 const cityResto = combineReducers({
-  cityChange
+  cityChange, authentication
 });
 
 export default cityResto;
