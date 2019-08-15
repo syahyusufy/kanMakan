@@ -1,0 +1,34 @@
+.tab-list {
+  border: solid #ccc;
+  border-width: 1px;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  padding-left: 0;
+  background-color: white;
+}
+
+.tab-list-item {
+  text-align: center;
+  width: 20%;
+  cursor: pointer;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 1rem 0.75rem;
+  border: solid #ccc;
+  border-width: 0px 1px 0 0px;
+}
+
+.tab-list-active {
+  border-bottom-width: 4px;
+  border-bottom-color: #cb202d;
+  font-weight: bold;
+}
+
+.phone-color {
+  color: #099e44;
+}
+
+.red {
+  color: #cb202d;
+}
