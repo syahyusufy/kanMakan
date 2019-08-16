@@ -7,6 +7,8 @@ import {  MDBBtn,
           MDBFormInline,
         } from "mdbreact";
 
+import Logo from '../images/icon2.png';
+import search from '../images/search.jpg';
 import "../index.css";
 import { connect } from 'react-redux';
 import * as cityAction from '../actions/cityAction';
@@ -69,7 +71,7 @@ class LandHeader extends React.Component {
                   <MDBCol align="right" className="mt-4">
                    <a className="font-weight-bold text-light" href="#">{this.props.userLogin.user.username}</a> 
                   </MDBCol> 
-                  : 
+                  :
                   <MDBCol align="right" className="mt-4">
                     <Link className="pr-3 font-weight-bold text-light" to="/signin">Masuk</Link>
                     <MDBBtn outline color="white" href="#">Daftar</MDBBtn>
@@ -78,15 +80,15 @@ class LandHeader extends React.Component {
                 </MDBRow>
                 <MDBRow>
                   <MDBCol className="container mt-5">
-                     <img src={"https://cdn.auth0.com/blog/react-js/react.png"} alt="Logo" width={200} height={200}/>
+                     <img src={Logo} alt="Logo" width={120} height={120}/>
                   </MDBCol>
                 </MDBRow>
                 <MDBRow>
-                  <MDBCol className="mt-3"> 
-                    <h3 className="font-weight-bold text-light">Find the best restaurants, cafés, and bars in Bandung</h3> 
+                  <MDBCol className="mt-4"> 
+                    <h4 className="text-light">Find the best restaurants, cafés, and bars in Bandung</h4> 
                   </MDBCol>
                 </MDBRow>
-                <MDBRow className="p-5">
+                <MDBRow className="pt-3 pl-5 pr-5 pb-5">
                   <MDBCol md="2"/>
                   <MDBCol md="2 pr-0 pb-3">
                     <div>
@@ -98,10 +100,8 @@ class LandHeader extends React.Component {
                   </MDBCol>
                   <MDBCol md="7 pl-0">
                     <MDBFormInline action="#" className="container" onSubmit={this.handleSubmit}>
-                    
-                      <MDBIcon className="text-white" icon="search" />
+                      <img src={search} alt="Logo" width={35} height={35}/>
                       <input onChange={this.handleKeywordChange} className="form-control form-control-md ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-                    
                     </MDBFormInline>
                   </MDBCol>
                 </MDBRow>

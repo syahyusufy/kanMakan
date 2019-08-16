@@ -14,7 +14,7 @@ export default class Content extends React.Component {
      <MDBRow className="pb-3 pl-4">
        <MDBCard className="card">
          <MDBCardBody>
-           <MDBRow className="line">
+           <MDBRow>
              <MDBCol size="4">
                 <img className="img-square-wrapper" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={125} height={100}/>
              </MDBCol> 
@@ -24,11 +24,11 @@ export default class Content extends React.Component {
                  <div className="font-weight-bold font-card-title">{this.props.search.restaurantName}</div>
                  <div><b>Bogor Selatan</b></div>
                  <div className="grey-text"> {this.props.search.restaurantAddress}</div>
+
                 </div>
              </MDBCol>
-             <MDBCol>
-
-             </MDBCol>
+             <MDBCol/>
+             <MDBRow className="line"/>
            </MDBRow>
            <MDBRow className="pt-3 font-card">
              <MDBCol size="4" className="grey-text">
