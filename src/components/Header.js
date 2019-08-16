@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import SearchContainer from "./SearchContainer";
 import Home from "./Home";
 
@@ -8,7 +8,7 @@ import {  MDBBtn,
           MDBIcon, 
           MDBFormInline,
           MDBNavbar,
-          MDBNavbarBrand
+          MDBNavbarBrand,
         } from "mdbreact";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { connect } from 'react-redux';
@@ -60,18 +60,18 @@ class Header extends React.Component {
                     </select>
                   </div>
                 </MDBCol>
-                <MDBCol size="7 pl-3">
+                <MDBCol size="6 pl-3 pr-0">
                   <MDBIcon icon="search pr-2"/>
-                  <input className="form-control w-75" type="text" placeholder="Search" aria-label="Search" onChange={this.handleKeywordChange}/>
+                  <input className="form-control size" type="text" placeholder="Search" aria-label="Search" onChange={this.handleKeywordChange}/>
                   <Link to={`/search/${this.state.keyword}`}>
                       <MDBBtn color="solid-blue text-white" className="btn-md mr-auto">Search</MDBBtn>
                   </Link>
                 </MDBCol>
-                <MDBCol size="1 pl-4 pr-0">
-                  <a onClick={this.handleLogin} className="text-white font-weight-bold">Log in</a>
-                </MDBCol>
-                <MDBCol size="1 pl-0">
-                  <MDBBtn className="btn-md" outline color="white" href="#">Create</MDBBtn>
+                <MDBCol size="3 pl-0 pr-0">
+                  <Fragment>
+                    <MDBBtn onClick={this.handleLogin} className="btn-md" outline color="white" href="#">Log in</MDBBtn>
+                    <MDBBtn className="btn-md" outline color="white" href="#">Create</MDBBtn>
+                  </Fragment>
                 </MDBCol>
               </MDBFormInline>
             </MDBRow>

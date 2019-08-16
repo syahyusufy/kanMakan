@@ -12,6 +12,11 @@ import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import AuthUser from './pages/AuthUser';
+import Detail from './pages/RestaurantDetail';
+
+// import "@fortawesome/fontawesome-free/css/all.min.css";
+// import "bootstrap-css-only/css/bootstrap.min.css";
+// import "mdbreact/dist/css/mdb.css";
 
 const store = configureStore();
 
@@ -23,6 +28,7 @@ ReactDOM.render(
             <Route exact path="/search/:keyword" component={Header} />
             <Route path="/signin" component={AuthUser} />
             <Route path="/signup" component={AuthUser} />
+            <Route path="/detail" component={Detail} />
         </Switch>
     </BrowserRouter>
     <LandFooter />

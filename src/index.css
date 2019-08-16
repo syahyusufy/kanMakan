@@ -3,6 +3,7 @@
 body, html {
   height: 100%;
 }
+
 .bg {
   background-image: url("images/bg.jpg");
   background-position: center;
@@ -94,4 +95,6 @@ body, html {
   border-bottom-right-radius: 0.25rem;
 }
 
-
+input[name="size"]{
+  width: 100%;
+}

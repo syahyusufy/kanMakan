@@ -6,10 +6,23 @@
 }
 
 .bw1 {
-  border-width: 1px;
+  border-width: .5px;
 }
 
 .bg-green {
   background: #5BA829;
   border-color: #5BA829 !important;
+}
+
+.green {
+  color: #ADD394;
+}
+
+.bg-gray-banner {
+  background-color: #FAFAFA;
+}
+
+.ui-devider-clear {
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }

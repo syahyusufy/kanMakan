@@ -24,7 +24,6 @@ export default class Content extends React.Component {
                  <div className="font-weight-bold font-card-title">{this.props.search.restaurantName}</div>
                  <div><b>Bogor Selatan</b></div>
                  <div className="grey-text"> {this.props.search.restaurantAddress}</div>
-
                 </div>
              </MDBCol>
              <MDBCol/>

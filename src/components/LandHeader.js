@@ -100,7 +100,7 @@ class LandHeader extends React.Component {
                   </MDBCol>
                   <MDBCol md="7 pl-0">
                     <MDBFormInline action="#" className="container" onSubmit={this.handleSubmit}>
-                      <img src={search} alt="Logo" width={35} height={35}/>
+                      <img src={search} alt="Logo" width={37} height={37} className="rounded"/>
                       <input onChange={this.handleKeywordChange} className="form-control form-control-md ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
                     </MDBFormInline>
                   </MDBCol>
