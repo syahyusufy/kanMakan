@@ -4,27 +4,38 @@ import Home from "./Home";
 
 import {  MDBBtn, 
           MDBCol, 
-          MDBContainer, 
           MDBRow, 
           MDBIcon, 
           MDBFormInline,
           MDBNavbar,
-          MDBNavbarBrand,
-          MDBNavbarToggler,
-          MDBCollapse,
-          MDBNavbarNav
+          MDBNavbarBrand
         } from "mdbreact";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { connect } from 'react-redux';
+import * as cityAction from '../actions/cityAction';
 
-export class Header extends React.Component {
+class Header extends React.Component {
   constructor(){
 		super()
 		this.state={
 			keyword:''
 		}
-		this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleLogin(){
+    this.props.history.push("/signin");
   }
   
+  handleCityChange(e){
+    this.setState({city: e.target.value});
+    this.props.setCity(e.target.value);
+    console.log(e.target.value);
+    e.preventDefault();
+  }
+
   handleKeywordChange(e){
     this.setState({keyword: e.target.value});
     console.log(this.state.keyword);
@@ -43,14 +54,13 @@ export class Header extends React.Component {
                 </MDBCol>
                 <MDBCol size="2 pl-5 pr-5">
                   <div>
-                    <select className="browser-default custom-select form-control-sm">
-                      <option>Choose City</option>
+                    <select value={this.props.city} className="browser-default custom-select form-control-sm" onChange={this.handleCityChange}>
                       <option value="1">Bandung</option>
                       <option value="2">Jakarta</option>
                     </select>
                   </div>
                 </MDBCol>
-                <MDBCol size="7 pl-5">
+                <MDBCol size="7 pl-3">
                   <MDBIcon icon="search pr-2"/>
                   <input className="form-control w-75" type="text" placeholder="Search" aria-label="Search" onChange={this.handleKeywordChange}/>
                   <Link to={`/search/${this.state.keyword}`}>
@@ -58,7 +68,7 @@ export class Header extends React.Component {
                   </Link>
                 </MDBCol>
                 <MDBCol size="1 pl-4 pr-0">
-                  <Link to={`/home`} className="text-white font-weight-bold">Log in</Link>
+                  <a onClick={this.handleLogin} className="text-white font-weight-bold">Log in</a>
                 </MDBCol>
                 <MDBCol size="1 pl-0">
                   <MDBBtn className="btn-md" outline color="white" href="#">Create</MDBBtn>
@@ -67,9 +77,27 @@ export class Header extends React.Component {
             </MDBRow>
           </div>
         </MDBNavbar>
+      
           <Route path="/search/:keyword" component={SearchContainer} />
           <Route path="/home" component={Home} />
       </Router>
+      
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    city: state.cityChange,
+    userLogin: state.authentication
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCity: city => dispatch(cityAction.setCity(city))
+  }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

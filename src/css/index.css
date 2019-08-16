@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Darker+Grotesque|Dosis|Muli|Nunito|Quicksand&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eceff1;
+}
+
+
+.mr-20 {
+  margin-right: 20px !important;
+}

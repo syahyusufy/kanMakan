@@ -38,7 +38,11 @@ body, html {
 } 
 
 .card {
-	width: 22rem;
+	width: 512px;
+}
+
+.land-card {
+  width: 23rem;
 }
 
 .line {
@@ -63,6 +67,7 @@ body, html {
 .font-mini-card {
   font-size: 13px;
 }
+
 .font-mini-card2{
   font-size: 11px;
 }
@@ -74,7 +79,6 @@ body, html {
 .font-card-title {
   font-size: 25px;
   color: solid red;
-
 }
 
 .mini-card {
