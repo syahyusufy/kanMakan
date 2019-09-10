@@ -38,9 +38,8 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
       e.preventDefault();
-
         // if(this.state.email && this.state.password){
-            axios.post(`http://127.0.0.1:8000/api/auth/register`, { 
+            axios.post(`http://192.168.1.16:8000/api/auth/register`, { 
                 username: this.state.username,
                 email: this.state.email,
                 password: this.state.password,

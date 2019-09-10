@@ -5,11 +5,8 @@ import {
           MDBRow, 
           MDBCard,
           MDBCardBody,
-          
           MDBCardText,
-          
           MDBFooter,
-          
         } from "mdbreact";
 
 import "../index.css";
@@ -25,7 +22,7 @@ export class LandContent extends React.Component {
           <div className="collections-grid row">
             <MDBRow>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} width={145} height={120}/>
@@ -38,7 +35,7 @@ export class LandContent extends React.Component {
                 </MDBCard>
               </MDBCol>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
@@ -51,7 +48,7 @@ export class LandContent extends React.Component {
                 </MDBCard>
               </MDBCol>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
@@ -67,7 +64,7 @@ export class LandContent extends React.Component {
             <br/>
             <MDBRow>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
@@ -80,7 +77,7 @@ export class LandContent extends React.Component {
                 </MDBCard>
               </MDBCol>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
@@ -93,7 +90,7 @@ export class LandContent extends React.Component {
                 </MDBCard>
               </MDBCol>
               <MDBCol sm="4 pb-3">
-                <MDBCard>
+                <MDBCard className="land-card">
                   <div className="card-horizontal">
                     <div className="img-square-wrapper">
                         <img classNames="" src={"http://via.placeholder.com/300x180"} alt="Card image cap" width={145} height={120}/>
@@ -113,7 +110,7 @@ export class LandContent extends React.Component {
             <p>Discover restaurants by type of meal</p>
           </div>
 
-          <div className="collections-grid mb-5 table-light grid-container ui segment eight column doubling padded grid">
+          <div className="collections-grid mb-5 table-light grid-container">
             <MDBRow className="p-5 pt-0">
               <MDBCol> 
                 <a href="https://www.zomato.com/id/jakarta/sarapan" class="column ta-center start-categories-item">

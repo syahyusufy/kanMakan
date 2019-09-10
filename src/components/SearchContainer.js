@@ -59,7 +59,7 @@ class SearchContainer extends Component{
 
 	    console.log(this.state.keyword);
 
-	      axios.post("http://localhost:8000/api/search",{
+	      axios.post("http://192.168.1.16:8000/api/search",{
 	          keyword : this.props.match.params.keyword,
 	          cty : this.props.city
 	      })

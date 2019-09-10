@@ -1,13 +1,15 @@
+
+
 body, html {
   height: 100%;
 }
+
 .bg {
-  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_pic/05/05/68/9859685b678ea96.jpg");
-  opacity: 0.9;
+  background-image: url("images/bg.jpg");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  font-family: 'Roboto', cursive;
 }
 
 .background {
@@ -41,9 +43,14 @@ body, html {
 	width: 512px;
 }
 
+.land-card {
+  width: 23rem;
+}
+
 .line {
   border-bottom: 1px solid #eceff1;
-  height: 135px;
+  height: 10px;
+
 }
 
 .font {
@@ -63,6 +70,7 @@ body, html {
 .font-mini-card {
   font-size: 13px;
 }
+
 .font-mini-card2{
   font-size: 11px;
 }
@@ -74,7 +82,6 @@ body, html {
 .font-card-title {
   font-size: 25px;
   color: solid red;
-
 }
 
 .mini-card {
@@ -82,4 +89,12 @@ body, html {
   height: 11rem;
 }
 
+.input-group.md-form.form-sm.form-1 input {
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
 
+input[name="size"]{
+  width: 100%;
+}

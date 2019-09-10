@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './css/index.css';
+// import "./index.css";
 import { LandContent } from "./components/Landingpage";
 import LandHeader from "./components/LandHeader";
 
