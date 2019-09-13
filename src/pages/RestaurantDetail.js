@@ -4,6 +4,11 @@ import 'tachyons';
 
 import Tabs from './../components/Tabs';
 import RestaurantInfo from './../components/RestaurantInfo';
+import RestaurantMenu from '../components/RestaurantMenu';
+import RestaurantReviews from '../components/RestaurantReviews';
+import RestaurantPhotos from '../components/RestaurantPhotos';
+
+
 import './../css/RestaurantDetail.css';
 require('./../css/Tabs.css');
 
@@ -60,13 +65,13 @@ class RestaurantDetail extends Component {
                     <RestaurantInfo ></RestaurantInfo>
                   </div>
                   <div label="Menu">
-                    After 'while, <em>Crocodile</em>!
+                    <RestaurantMenu ></RestaurantMenu>
                   </div>
                   <div label="Reviews (97)">
-                    Nothing to see here, this tab is <em>extinct</em>!
+                    <RestaurantReviews ></RestaurantReviews>
                   </div>
                   <div label="Photos (58)">
-                    Yeyeye, this tab is <em>extinct</em>!
+                    <RestaurantPhotos ></RestaurantPhotos>
                   </div>
                 </Tabs>
               </div>

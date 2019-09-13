@@ -40,7 +40,7 @@ class RestaurantInfo extends Component {
         
         <div className="flex flex-wrap w-third">
           <div id="facilities" className="w-100 bg-white pa3 pr0 pb0 mb2 mr2">
-            <div className="f4 b dark-gray"><i class="fas fa-check"></i>More Info</div>
+            <div className="f4 b dark-gray">More Info</div>
             <div className="f6 dark-gray mt2">
               <div><FontAwesomeIcon icon={faCheck} className="phone-color" /> Wifi</div>
               <div><FontAwesomeIcon icon={faTimes} className="red" /> No Alcohol Available</div>
