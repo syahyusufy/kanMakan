@@ -124,84 +124,25 @@
   border-color: #3F7E00 !important;
 }
 
-.progress-con {
-  margin-left: 20px;
-  font-size: 10px;
-  height: 25px !important;
+.most_recent {
+  font-size: 11.3px;
+  color: #979baa;
 }
 
-.ui-progress {
-  font-size: 1rem;
-  position: relative;
-  display: block;
-  max-width: 100%;
-  border: none;
-  margin: 1em 0 2.5em;
-  box-shadow: none;
-  background: rgba(0,0,0,.1);
-  padding: 0;
-  border-radius: .28571429rem;
+.dash_colr {
+  color: #d7d7d7;
 }
-
-.bar-text {
-  margin: .4em 0 1em !important;
+.fs20 {
+  font-size: 20px;
 }
-
-.h10 {
-  height: 10px !important;
+.dash_hover {
+  width: 323px;
+  border: 0;
+      border-top-color: currentcolor;
+      border-top-style: none;
+      border-top-width: 0px;
+  border-top: 2px dashed #d7d7d7;
+  background: 0 0;
+  height: 0;
+  margin-top: 10px;
 }
-
-.w220 {
-  width: 220px;
-}
-
-.progress_override {
-  min-width: 0 !important;
-}
-
-.hcolor_5 {
-  background-color: #305D02 !important;
-}
-
-.h10 {
-  height: 10px !important;
-}
-
-.ui.progress .bar {
-  display: block;
-  line-height: 1;
-  position: relative;
-  width: 0;
-  min-width: 2em;
-  background: #888;
-      background-color: rgb(136, 136, 136);
-  border-radius: .28571429rem;
-  -webkit-transition: width .1s ease,background-color .1s ease;
-  transition: width .1s ease,background-color .1s ease;
-      transition-duration: 0.1s, 0.1s;
-}
-
-.ui.active.progress .bar {
-  position: relative;
-  min-width: 2em;
-}
-
-element {
-  transition-duration: 300ms;
-  width: 67%;
-}
-
-.ui.active.progress .bar::after {
-  content: '';
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  border-radius: .28571429rem;
-  -webkit-animation: progress-active 2s ease infinite;
-  animation: progress-active 2s ease infinite;
-}
-

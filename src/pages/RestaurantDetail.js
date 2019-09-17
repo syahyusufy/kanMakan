@@ -62,7 +62,8 @@ class RestaurantDetail extends Component {
               <div className="tl">
                 <Tabs>
                   <div label="Overview">
-                    <RestaurantInfo ></RestaurantInfo>
+                    <RestaurantReviews ></RestaurantReviews>
+                    {/* <RestaurantInfo ></RestaurantInfo> */}
                   </div>
                   <div label="Menu">
                     <RestaurantMenu ></RestaurantMenu>
